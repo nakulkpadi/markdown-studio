@@ -34,36 +34,18 @@ jobs:
       - name: Initialize platform configs if missing
         run: |
           mkdir -p temp_backup
-          cp -r lib temp_backup/ 2>/dev/null || true
-          cp pubspec.yaml temp_backup/ 2>/dev/null || true
+          cp -r lib temp_backup/
+          cp pubspec.yaml temp_backup/
           flutter create . --project-name markdown_studio --platforms=android,windows
-          cp -r temp_backup/lib . 2>/dev/null || true
-          cp temp_backup/pubspec.yaml . 2>/dev/null || true
+          cp -r temp_backup/lib .
+          cp temp_backup/pubspec.yaml .
           rm -rf temp_backup
-
-          # Set compileSdk to 36 for subprojects & suppress AAR compileSdk checks
-          if [ -f android/build.gradle ]; then
-            cat << 'GRADLE' >> android/build.gradle
-
-subprojects {
-    afterEvaluate { project ->
-        if (project.hasProperty('android')) {
-            project.android {
-                compileSdkVersion 36
-            }
-        }
-    }
-}
-GRADLE
-          fi
-
-          echo "android.suppressUnsupportedCompileSdk=36" >> android/gradle.properties
 
       - name: Install dependencies
         run: flutter pub get
 
       - name: Build Android Release APK
-        run: flutter build apk --release -- -x checkReleaseAarMetadata
+        run: flutter build apk --release -- -x checkReleaseAarMetadata -Pandroid.suppressUnsupportedCompileSdk=36
 
       - name: Upload Android APK
         uses: actions/upload-artifact@v4
@@ -95,11 +77,11 @@ GRADLE
         shell: bash
         run: |
           mkdir -p temp_backup
-          cp -r lib temp_backup/ 2>/dev/null || true
-          cp pubspec.yaml temp_backup/ 2>/dev/null || true
+          cp -r lib temp_backup/
+          cp pubspec.yaml temp_backup/
           flutter create . --project-name markdown_studio --platforms=android,windows
-          cp -r temp_backup/lib . 2>/dev/null || true
-          cp temp_backup/pubspec.yaml . 2>/dev/null || true
+          cp -r temp_backup/lib .
+          cp temp_backup/pubspec.yaml .
           rm -rf temp_backup
 
       - name: Install dependencies
