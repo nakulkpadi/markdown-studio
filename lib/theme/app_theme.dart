@@ -12,13 +12,6 @@ class AppTheme {
         elevation: 0,
         surfaceTintColor: Colors.transparent,
       ),
-      cardTheme: CardThemeData(
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-          side: const BorderSide(color: Color(0xFFE2E8F0)),
-        ),
-      ),
     );
   }
 
@@ -32,13 +25,6 @@ class AppTheme {
         backgroundColor: Color(0xFF1E293B),
         elevation: 0,
         surfaceTintColor: Colors.transparent,
-      ),
-      cardTheme: CardThemeData(
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-          side: const BorderSide(color: Color(0xFF334155)),
-        ),
       ),
     );
   }
