@@ -1,0 +1,27 @@
+name: markdown_studio
+description: "A fast, responsive cross-platform Markdown editor and viewer for PC and Android."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_markdown: ^0.7.3
+  file_picker: ^8.0.0+1
+  path_provider: ^2.1.2
+  share_plus: ^9.0.0
+  pdf: ^3.10.8
+  printing: ^5.12.0
+  markdown: ^7.2.2
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
