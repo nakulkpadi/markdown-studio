@@ -1,3 +1,4 @@
+import 'package:markdown/markdown.dart' as md;
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'theme/app_theme.dart';
