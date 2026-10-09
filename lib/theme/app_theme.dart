@@ -5,14 +5,14 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
-      colorSchemeSeed: const Color(0xFF2563EB), // Modern blue
+      colorSchemeSeed: const Color(0xFF2563EB),
       scaffoldBackgroundColor: const Color(0xFFF8FAFC),
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.white,
         elevation: 0,
         surfaceTintColor: Colors.transparent,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
@@ -27,13 +27,13 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.dark,
       colorSchemeSeed: const Color(0xFF3B82F6),
-      scaffoldBackgroundColor: const Color(0xFF0F172A), // Dark slate
+      scaffoldBackgroundColor: const Color(0xFF0F172A),
       appBarTheme: const AppBarTheme(
         backgroundColor: Color(0xFF1E293B),
         elevation: 0,
         surfaceTintColor: Colors.transparent,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
